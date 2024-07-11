@@ -2,27 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="SpaRcle Studio">
-	<main>
-		<div class="header">
-			<img src="/logo.png" alt="SpaRcle Studio" class="header-logo"/>
-			<a href="https://forum.sparcles.dev" class="button">Forum</a>
-		</div>
-		<h1><span class="text-gradient">SpaRcle Studio</span></h1>
-		<p class="tmp">Work in progress.</p>
-	</main>
+<Layout> 
+	<h1><span class="text-gradient">SpaRcle Studio</span></h1>
+	<p class="tmp">Work in progress.</p>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
@@ -32,6 +17,8 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.tmp {
 		text-align: center;
+		color: white;
+		font-size: 2rem;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -39,21 +26,5 @@ import Layout from '../layouts/Layout.astro';
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
-	}
-	.button {
-		padding: 1rem;
-		text-align: right;
-		bottom: 0;
-		right: 0;
-		color: white;
-	}
-	.header-logo {
-		align-self: left;
-		width: 40px;
-	}
-	.header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 	}
 </style>
