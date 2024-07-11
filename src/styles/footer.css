@@ -1,0 +1,64 @@
+.note {
+    color: gray;
+    margin-right: 10rem;
+    font-size: 1.1rem;
+}
+
+.community-div {
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+}
+
+.button {
+    margin-left: 4rem;
+    color: white;
+}
+
+.community-logo {
+    width: 2rem;
+    margin-left: 4rem;
+}
+
+.footer {
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111111;
+}
+
+@media (max-width: 950px) {
+    .community-div {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+
+    .note {
+        color: gray;
+        margin-right: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .community-logo {
+        width: 2rem;
+        margin-left: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        .footer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .community-logo {
+            margin: 0;
+        }
+
+        .note {
+            margin: 0;
+        }
+    }
+}
