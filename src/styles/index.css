@@ -1,4 +1,4 @@
-h1 {
+.h1 {
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
@@ -18,4 +18,30 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
+}
+
+@media (max-width: 800px) {
+    
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+
+    .h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    .tmp {
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+    }
+
 }

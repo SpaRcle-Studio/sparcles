@@ -47,18 +47,19 @@
         margin-left: 1rem;
     }
 
-    @media (max-width: 480px) {
-        .footer {
-            display: flex;
-            flex-direction: column;
-        }
+}
 
-        .community-logo {
-            margin: 0;
-        }
+@media (max-width: 480px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
 
-        .note {
-            margin: 0;
-        }
+    .community-logo {
+        margin: 0;
+    }
+
+    .note {
+        margin: 0;
     }
 }
