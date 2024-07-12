@@ -1,22 +1,30 @@
-.main {
-    margin-top: 2rem;
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg,
-            rgb(var(--accent)),
-            rgb(var(--accent-light)) 30%,
-            white 60%);
+html, body {
+    height: 100%;
 }
 
-html {
+body {
+    display: flex;
+    flex-direction: column;
     font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
+}
+
+.main {
+    flex: 1;
+    margin-top: 2rem;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1rem 0;
 }
 
 code {
@@ -29,4 +37,11 @@ code {
         Bitstream Vera Sans Mono,
         Courier New,
         monospace;
+}
+
+:root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
 }
