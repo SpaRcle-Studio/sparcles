@@ -5,6 +5,7 @@ dist/
 .astro/
 
 .vscode/
+.editorconfig
 
 # dependencies
 node_modules/
