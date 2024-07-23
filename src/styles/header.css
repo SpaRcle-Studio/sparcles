@@ -169,10 +169,6 @@
 
 @media (max-width: 480px) {
 
-    .nav__container {
-        border-radius: 0;
-    }
-
     .header-logo {
         width: 3rem;
         margin-bottom: 0.2rem;
@@ -183,5 +179,9 @@
     .header {
         border-radius: 0;
         margin: 0;
+    }
+
+    .nav__container {
+        border-radius: 0;
     }
 }
