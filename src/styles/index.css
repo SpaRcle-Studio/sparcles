@@ -4,6 +4,7 @@
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    transition: all 0.3s ease-in-out;
 }
 
 .tmp {
@@ -21,7 +22,7 @@
 }
 
 @media (max-width: 800px) {
-    
+
     .text-gradient {
         background-image: var(--accent-gradient);
         -webkit-background-clip: text;
@@ -44,4 +45,22 @@
         font-size: 1.5rem;
     }
 
+}
+
+@media (max-width: 400px) {
+    .h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 1em;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .tmp {
+        text-align: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease-in-out;
+    }
 }
