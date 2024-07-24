@@ -42,7 +42,7 @@
 
 @media (max-width: 1500px) {
     .header {
-        border-radius: 100px;
+        border-radius: 50px;
         margin: 30px;
     }
 }
@@ -76,7 +76,7 @@
         top: 1;
         z-index: 1;
         visibility: hidden;
-        transform: translateY(-20%);
+        transform: translateY(-30%);
         transition: all 0.3s ease-in-out;
         width: 100%;
         flex-direction: column;
@@ -91,7 +91,7 @@
         border-top-right-radius: 50px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
     .nav__container--opened {
@@ -168,6 +168,10 @@
 }
 
 @media (max-width: 480px) {
+
+    .header {
+        margin: 10px 10px;
+    }
 
     .header-logo {
         width: 3rem;
