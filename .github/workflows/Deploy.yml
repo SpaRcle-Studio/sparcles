@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
+      - name: Get latest news from the forum
+        run: python .github/workflows/NewsApi.py
+
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         # with:
