@@ -13,7 +13,7 @@ except Exception as e:
 
 WORKSPACE = ''
 try: 
-    if os.environ['GITHUB_ACTIONS'] == 'false':
+    if os.environ('GITHUB_WORKSPACE'):
         WORKSPACE = os.environ('GITHUB_WORKSPACE')
 except Exception as e: 
     WORKSPACE = os.getcwd()
