@@ -11,7 +11,7 @@ const { icon, title, description, link } = Astro.props;
 
 <div class="card mx-2 my-2 bg-card min-w-64 max-w-[400px] p-5 flex flex-col rounded-xl">
     <div class="card__top w-fit mb-5">
-        <img src=`${icon}` class="w-full h-full rounded-xl"></img>
+        <img src=`${icon}` class="w-full rounded-xl sm:h-[250px]"></img>
     </div>
     <div class="card__bottom h-[18rem] flex flex-col 2xl:flex-row 2xl:justify-between">
         <h3 class="title text-xl mb-4 font-bold 2xl:m-0">{title}</h3>

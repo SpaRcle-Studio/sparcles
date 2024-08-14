@@ -1,6 +1,9 @@
 # build output
 dist/
 
+#folders with data
+data/
+
 # generated types
 .astro/
 
@@ -25,3 +28,4 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+news.json
