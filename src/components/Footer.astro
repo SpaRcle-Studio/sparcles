@@ -1,20 +1,21 @@
 ---
-import '../styles/footer.css'
 ---
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="community-div">
-        <a href="https://github.com/SpaRcle-Studio/">
-            <img src="/community/github.png" alt="SpaRcle Studio's GitHub" class="community-logo"/>
-        </a>
-        <a href="https://discord.gg/RXndN43QF8">
-            <img src="/community/discord1.png" alt="SpaRcle Studio's Discord Server" class="community-logo"/>
-        </a>
-        <a href="https://forum.sparcles.dev/">
-            <img src="/community/forum.png" alt="SpaRcle Studio's Forum" class="community-logo"/>
-        </a>
-    </div>
-    <p class="note">Made w/ <3 by innerviewer & Vega7.</p>
+<footer class="footer bg-custom_components">
+    <div class="footer__container flex flex-col justify-center items-center p-3 h-24 sm:flex-row sm:justify-between">
+        <div class="footer-container flex flex-row mb-2 sm:mb-0">
+            <a href="https://github.com/SpaRcle-Studio/">
+                <img src="/community/github.png" alt="SpaRcle Studio's GitHub" class="community-logo w-8 mx-1 sm:m-2"/>
+            </a>
+            <a href="https://discord.gg/RXndN43QF8">
+                <img src="/community/discord1.png" alt="SpaRcle Studio's Discord Server" class="community-logo w-8 mx-1 sm:m-2"/>
+            </a>
+            <a href="https://forum.sparcles.dev/">
+                <img src="/community/forum.png" alt="SpaRcle Studio's Forum" class="community-logo w-8 mx-1 sm:m-2"/>
+            </a>
+        </div>
+        <div class="creators sm:m-2">
+            <p class="note font-jbmono text-xs sm:text-sm md:text-base">Made w/ by innerviewer & Vega7.</p>
+        </div>
     </div>
 </footer>
