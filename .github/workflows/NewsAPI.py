@@ -41,7 +41,11 @@ def parse_thumbnail(post_id):
 
 def parse_topic(topic):
     title = topic['title']
-    icon = "https:" + topic['image_url']
+    
+    icon = ''
+    if topic['image_url']:
+        icon = "https:" + topic['image_url']
+        
     link = FORUM_DOMAIN + f"t/{topic['slug']}/{topic['id']}"
     thumbnail = parse_thumbnail(topic['post_stream']['posts'][0]['id'])
     json = {
