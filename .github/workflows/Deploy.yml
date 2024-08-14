@@ -22,9 +22,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Get latest news from the forum
-        working-directory:  ${{github.workspace}}/.github/workflows
         run: |
-          python ./NewsAPI.py
+          python .github/workflows/NewsAPI.py
         env: 
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
