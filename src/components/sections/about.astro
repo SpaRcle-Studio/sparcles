@@ -1,0 +1,29 @@
+---
+import Container from "../Container.astro";
+---
+
+<section class="about h-full bg-gradient-to-r from-slate-950 to-gray-900" id="about">
+    <Container>
+        <div class="about__container">
+            <div class="about__header flex flex-row justify-between items-center pb-5">
+                <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">About SpaRcle Engine</h1>
+            </div>
+            <div class="news__container flex flex-col xl:flex-row justify-between py-5">
+                <div class="about__image mb-10 xl:mr-10 xl:mb-0">
+                    <img src="/raptoid.gif" alt="" class="image h-full w-full rounded-xl">
+                </div>
+                <div class="about__description max-w-[700px] flex flex-col">
+                    <div class="about__description-container">
+                        <h3 class="description__title mb-10 sm:text-2xl md:text-3xl 2xl:text-6xl font-bold font-jbmono">SpaRcle Engine - cross-platform 2D/3D game engine in C++</h3>
+                        <p class="description text-sm sm:text-base lg:text-lg 2xl:text-xl font-jbmono mb-10">SpaRcle Engine is an ongoing game engine developed in C++. It aims to establish a strong base for game creation and is currently in the early stages of development, emphasizing the creation of a versatile and efficient architecture.</p>
+                    </div>
+                    <a href="https://github.com/SpaRcle-Studio/SREngine" class="button">
+                        <div class="link__button w-fit cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 text-black">
+                            Go to repo
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>

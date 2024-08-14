@@ -1,48 +1,28 @@
----
-import "../styles/header.css";
----
-
-<div class="header">
-    <div class="header__container">
-        <a href="/">
-            <img src="/logo.png" alt="SpaRcle Studio" class="header-logo" />
-        </a>
-        <button
-            class="menu"
-            id="burger-button"
-            onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-            aria-label="Main Menu"
-        >
-            <svg
-                class="burger__svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-            >
-                <path
-                    class="line line1"
-                    d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
-                ></path>
-                <path class="line line2" d="M 20,50 H 80"></path>
-                <path
-                    class="line line3"
-                    d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
-                ></path>
-            </svg>
+<header class="header bg-custom_components fixed w-full z-50">
+    <div class="header__container flex flex-row justify-between items-center px-5 h-24">
+        <div class="logo mx-2">
+            <a href="/" class="w-12 h-12">
+                <div class="logo__container flex flex-row items-center">
+                    <img src="/logo.png" alt="SpaRcle Studio" class="w-12 h-12"/>
+                    <h1><span class="hidden sm:block sm:text-lg md:text-xl lg:text-2xl font-bold font-systemui text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">SPARCLE STUDIO</span></h1>
+                </div>
+            </a>
+        </div>
+        <h1><span class="sm:hidden text-xl md:text-xl lg:text-2xl font-bold font-systemui text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">SPARCLE STUDIO</span></h1>
+        <button class="burger-button sm:hidden mr-3">
+            <div class="tham tham-e-squeeze tham-w-6">
+                <div class="tham-box">
+                  <div class="bg-white tham-inner" />
+                </div>
+            </div>
         </button>
+        <nav class="nav__container bg-custom_components hidden sm:flex">
+            <a href="/download" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">DOWNLOAD</a>
+            <a href="/wiki" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">WIKI</a>
+            <a href="https://forum.sparcles.dev/" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">FORUM</a>
+        </nav>
     </div>
-    <nav class="nav__container">
-        <a href="/download" class="button">Download</a>
-        <a href="/wiki" class="button">Wiki</a>
-        <a href="https://forum.sparcles.dev/" class="button">Forum</a>
-    </nav>
-</div>
-
-<script>
-    let navMenu = document.querySelector(".nav__container");
-    let header = document.querySelector(".header");
-    document.getElementById("burger-button")?.addEventListener("click", (e) => {
-        navMenu?.classList.toggle("nav__container--opened");
-        header?.classList.toggle("header--opened");
-    });
-</script>
+    <script>
+        import '../scripts/burger-menu.ts'
+    </script>
+</header>
