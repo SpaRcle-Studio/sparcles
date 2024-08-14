@@ -1,8 +1,4 @@
----
-
----
-
-<header class="bg-custom_components">
+<header class="header bg-custom_components fixed w-full z-50">
     <div class="header__container flex flex-row justify-between items-center px-5 h-24">
         <div class="logo mx-2">
             <a href="/" class="w-12 h-12">
@@ -12,15 +8,21 @@
                 </div>
             </a>
         </div>
+        <h1><span class="sm:hidden text-xl md:text-xl lg:text-2xl font-bold font-systemui text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">SPARCLE STUDIO</span></h1>
         <button class="burger-button sm:hidden mr-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <div class="tham tham-e-squeeze tham-w-6">
+                <div class="tham-box">
+                  <div class="bg-white tham-inner" />
+                </div>
+            </div>
         </button>
-        <nav class="nav__container flex-col items-center justify-center hidden sm:flex sm:flex-row">
-            <a href="/download" class="button mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">DOWNLOAD</a>
-            <a href="/wiki" class="button mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">WIKI</a>
-            <a href="https://forum.sparcles.dev/" class="button mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">FORUM</a>
+        <nav class="nav__container bg-custom_components hidden sm:flex">
+            <a href="/download" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">DOWNLOAD</a>
+            <a href="/wiki" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">WIKI</a>
+            <a href="https://forum.sparcles.dev/" class="button p-5 mx-3 md:mx-5 font-bold hover:text-cyan-300 transition-colors duration-200">FORUM</a>
         </nav>
     </div>
+    <script>
+        import '../scripts/burger-menu.ts'
+    </script>
 </header>

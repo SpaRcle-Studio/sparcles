@@ -6,6 +6,7 @@ export default {
             colors: {
                 custom_body: '#13151a',
                 custom_components: '#111111',
+                card: '#141414'
             },
             fontFamily: {
                 sans: ['Inter', 'Arial', 'sans-serif'],
@@ -17,5 +18,5 @@ export default {
             },
         },
 	},
-	plugins: [],
+	plugins: [require('tailwind-hamburgers')],
 }
