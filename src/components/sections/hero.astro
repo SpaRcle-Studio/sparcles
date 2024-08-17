@@ -6,7 +6,7 @@ import Container from "../Container.astro"
     <div class="hero__container w-full xl:flex xl:flex-row xl:justify-end p-5 sm:p-7 md:p-12 lg:p-24 mt-24">
         <div class="title__container xl:absolute xl:left-12 xl:right-0 xl:top-64 2xl:left-24">
             <div class="title flex flex-row items-center mb-5 md:mb-8 w-fit rounded-full">
-                <img src="/logo.png" alt="" class="title__logo hidden sm:block sm:w-12 md:w-14 lg:w-20">
+                <img src="/logo.png" alt="SpaRcle logo" class="title__logo hidden sm:block sm:w-12 md:w-14 lg:w-20">
                 <h1><span class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold font-systemui text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400">SpaRcle Engine</span></h1>
             </div>
             <p class="hero__description font-jbmono font-light text-sm sm:text-sm md:text-base lg:text-lg xl:w-1/2 xl:text-xl 2xl:w-[570px]">SpaRcle Engine is an ongoing game engine developed in C++. It aims to establish a strong base for game creation and is currently in the early stages of development, emphasizing the creation of a versatile and efficient architecture.</p>
@@ -24,9 +24,14 @@ import Container from "../Container.astro"
             </div>
         </div>
         <div class="demo pt-[40px] xl:p-0 xl:w-2/3">
-            <!-- <img src="/raptoid.gif" alt="" class="rounded-3xl"> -->
-            <img src="/engine-demo-scene.png" alt="" class="rounded-3xl">
-            <!-- <video src="https://videocdn.cdnpk.net/videos/91f1950c-7442-458b-a3f6-5548a02df70a/horizontal/previews/clear/large.mp4?token=exp=1723578536~hmac=66927466be543ac2debd21c48b6c262f11f910bac0579e43c3ed772f84f5a840" muted autoplay loop playsinline class="demo-video rounded-3xl"/> -->
+            <picture>
+                <source srcset="/engine-demo-scene640.webp" media="(max-width: 640px)" sizes="640px">
+                <source srcset="/engine-demo-scene768.webp" media="(max-width: 768px)" sizes="768px">
+                <source srcset="/engine-demo-scene1024.webp" media="(max-width: 1024px)" sizes="1024px">
+                <source srcset="/engine-demo-scene1280.webp" media="(max-width: 1280px)" sizes="1280px">
+                <source srcset="/engine-demo-scene1536.webp" media="(max-width: 1536px)" sizes="1536px">
+                <img src="/engine-demo-scene1536.webp" alt="engine-demo-scene" class="rounded-3xl w-full h-full">
+            </picture>
         </div>
     </div>
 </section>
