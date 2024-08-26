@@ -1,9 +1,6 @@
 # build output
 dist/
 
-#folders with data
-data/
-
 # generated types
 .astro/
 

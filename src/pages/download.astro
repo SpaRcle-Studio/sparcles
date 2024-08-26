@@ -1,7 +1,65 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import DownloadCard from '../components/DownloadCard.astro';
 ---
 
-<Layout title='Downloads'> 
-	<p class="tmp">Work in progress.</p>
+<Layout title='Downloads'>
+	<section class="section__download">
+        <div class="download__container flex flex-col justify-center items-center px-5 py-10 sm:p-7 md:p-12 lg:p-24 mt-24">
+            <h1 class="font-bold text-4xl sm:text-6xl mb-14">Download Engine</h1>
+            <div class="download__body flex flex-wrap">
+                <DownloadCard>
+                    <div class="card__container flex flex-col sm:flex-row">
+                        <div class="card__left mr-5 mb-5 sm:mb-0">
+                            <img src="/icons/arch-white.png" class="max-w-14" alt="Arch logo">
+                        </div>
+                        <div class="card__right">
+                            <h2 class="OS__version text-2xl font-bold mb-2">For Linux?</h2>
+                            <p class="download__description pb-5">If you are using Linux, you can download or build SREngine yourself using one of the following methods</p>
+                            <div class="card__buttons flex flex-col sm:flex-row">
+                                <div class="links__download cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 mb-5 text-black w-fit sm:mr-5 sm:mb-0">
+                                    <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="download font-jbmono font-medium">
+                                        Releases
+                                    </a>
+                                </div>
+                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 mb-5 text-white w-fit sm:mr-5 sm:mb-0">
+                                    <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/LinuxBuild.md" class="download font-jbmono font-medium">
+                                       Build
+                                    </a>
+                                </div>
+                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 mb-5 text-white w-fit sm:mr-5 sm:mb-0">
+                                    <a href="https://github.com/flathub/flathub/pull/5482" class="download font-jbmono font-medium">
+                                       Flathub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </DownloadCard>
+                <DownloadCard>
+                    <div class="card__container flex flex-col sm:flex-row">
+                        <div class="card__left mr-5 mb-5 sm:mb-0">
+                            <img src="/icons/windows-white.png" class="max-w-14" alt="Windows logo">
+                        </div>
+                        <div class="card__right">
+                            <h2 class="OS__version text-2xl font-bold mb-2">For Windows?</h2>
+                            <p class="download__description pb-5">If you are using Windows, you can download or build SREngine yourself using one of the following methods</p>
+                            <div class="card__buttons flex flex-row">
+                                <div class="links__download cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 mr-5 text-black w-fit sm:mr-5 sm:mb-0">
+                                    <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="download font-jbmono font-medium">
+                                        Releases
+                                    </a>
+                                </div>
+                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 text-white w-fit sm:mr-5 sm:mb-0">
+                                    <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/WindowsBuild.md" class="download font-jbmono font-medium">
+                                       Build
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </DownloadCard>
+            </div>
+        </div>
+    </section>
 </Layout>
