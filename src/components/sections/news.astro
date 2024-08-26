@@ -1,6 +1,6 @@
 ---
 import Container from "../Container.astro";
-import Card from "../Card.astro";
+import NewsCard from "../NewsCard.astro";
 import DataList from '../../data/news.json'
 
 const items = DataList.news
@@ -17,10 +17,10 @@ const items = DataList.news
             <ul class="news__container py-5 flex flex-wrap justify-center items-center">
                 {items.map((item) => {
                     if(!item.icon) {
-                        item.icon = '/logo.png';
+                        item.icon = 'logos/logo.png';
                     }
                     return (
-                        <Card icon={item.icon}
+                        <NewsCard icon={item.icon}
                               title={item.title}
                               description={item.description}
                               link={item.link}

@@ -10,26 +10,25 @@ import Container from "../Container.astro";
             </div>
             <div class="news__container flex flex-col xl:flex-row justify-between py-5">
                 <div class="video__container mb-10 xl:mr-10 xl:mb-0">
-                    <video class="rabtoid__video rounded-3xl w-full h-full" loop autoplay muted playsinline>
-                        <source src="/raptoid640.webm" type="video/webm" media="(max-width: 640px)" sizes="(max-width: 640px) 640px">
-                        <source src="/raptoid768.webm" type="video/webm" media="(max-width: 768px)" sizes="(max-width: 768px) 768px">
-                        <source src="/raptoid1024.webm" type="video/webm" media="(max-width: 1024px)" sizes="(max-width: 1024px) 1024px">
-                        <source src="/raptoid1280.webm" type="video/webm" media="(max-width: 1280px)" sizes="(max-width: 1280px) 1280px">
-                        <source src="/raptoid1536.webm" type="video/webm" media="(max-width: 1536px)" sizes="(max-width: 1536px) 1536px">
-                        <source src="raptoid.webm" type="video/webm" media="(max-width: 1920px)" sizes="(max-width: 1920px) 1536px">
-                        <source src="raptoid.mp4" type="video/mp4" media="(max-width: 1920px)" sizes="(max-width: 1920px) 1536px">
-                    </video>
+                    <picture>
+                        <source srcset="hero/engine-demo-scene640.webp" media="(max-width: 640px)" sizes="640px">
+                        <source srcset="hero/engine-demo-scene768.webp" media="(max-width: 768px)" sizes="768px">
+                        <source srcset="hero/engine-demo-scene1024.webp" media="(max-width: 1024px)" sizes="1024px">
+                        <source srcset="hero/engine-demo-scene1280.webp" media="(max-width: 1280px)" sizes="1280px">
+                        <source srcset="hero/engine-demo-scene1536.webp" media="(max-width: 1536px)" sizes="1536px">
+                        <img src="hero/engine-demo-scene1536.webp" alt="engine-demo-scene" class="rounded-3xl w-full h-full">
+                    </picture>
                   </div>
                 <div class="about__description max-w-[700px] flex flex-col">
                     <div class="about__description-container">
                         <h4 class="description__title mb-10 sm:text-2xl md:text-3xl 2xl:text-6xl font-bold font-jbmono">SpaRcle Engine - cross-platform 2D/3D game engine in C++</h4>
                         <p class="description text-sm sm:text-base lg:text-lg 2xl:text-xl font-jbmono mb-10">SpaRcle Engine is an ongoing game engine developed in C++. It aims to establish a strong base for game creation and is currently in the early stages of development, emphasizing the creation of a versatile and efficient architecture.</p>
                     </div>
-                    <a href="https://github.com/SpaRcle-Studio/SREngine" class="button">
-                        <div class="link__button w-fit cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 text-black">
+                    <div class="link__button w-fit font-jbmono cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 text-black">
+                        <a href="https://github.com/SpaRcle-Studio/SREngine" class="button">
                             Go to repo
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
