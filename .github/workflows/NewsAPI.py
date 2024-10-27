@@ -1,4 +1,4 @@
-import os 
+import os, sys
 import re
 import subprocess
 import json
@@ -12,10 +12,12 @@ except Exception as e:
 
 
 WORKSPACE = ''
-try: 
+ci_deploy = False
+try:
     if os.environ('GITHUB_WORKSPACE'):
-        WORKSPACE = os.environ('GITHUB_WORKSPACE')
-except Exception as e: 
+        WORKSPACE = os.getenv('GITHUB_WORKSPACE')
+        ci_deploy = True
+except Exception as e:
     WORKSPACE = os.getcwd()
     print("NewsAPI: script is not run by a part of CI, behaviour is undefined.")
 
@@ -41,11 +43,11 @@ def parse_thumbnail(post_id):
 
 def parse_topic(topic):
     title = topic['title']
-    
+
     icon = ''
     if topic['image_url']:
         icon = "https:" + topic['image_url']
-        
+
     link = FORUM_DOMAIN + f"t/{topic['slug']}/{topic['id']}"
     thumbnail = parse_thumbnail(topic['post_stream']['posts'][0]['id'])
     json = {
@@ -56,12 +58,29 @@ def parse_topic(topic):
     }
     return json
 
-latest_topics = requests.get(FORUM_DOMAIN + LATEST_TOPICS).json()
+request_failed = false
+try:
+    latest_topics = requests.get(FORUM_DOMAIN + LATEST_TOPICS).json()
+except ConnectionError:
+    print("NewsAPI: (error) failed to connect. Aborting.")
+    request_failed = True
+except Timeout:
+    print("NewsAPI: (error) the request timed out. Aborting.")
+    request_failed = True
+except RequestException as e:
+    print(f"NewsAPI: (error) aborting. An error occurred: {e}")
+    request_failed = True
+
+if request_failed:
+    if ci_deploy:
+        sys.exit(0)
+    else:
+        sys.exit(1)
 
 i = 0
 parsed_topics = []
 for latest_topic in latest_topics['topic_list']['topics']:
-    if i == 2: 
+    if i == 2:
         break
 
     topic = requests.get(FORUM_DOMAIN + SINGLE_TOPIC(latest_topic['id'])).json()
