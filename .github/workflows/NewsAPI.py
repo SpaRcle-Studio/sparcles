@@ -58,7 +58,7 @@ def parse_topic(topic):
     }
     return json
 
-request_failed = false
+request_failed = False
 try:
     latest_topics = requests.get(FORUM_DOMAIN + LATEST_TOPICS).json()
 except ConnectionError:
