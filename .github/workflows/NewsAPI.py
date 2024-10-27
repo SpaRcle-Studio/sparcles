@@ -21,7 +21,7 @@ except Exception as e:
     WORKSPACE = os.getcwd()
     print("NewsAPI: script is not run by a part of CI, behaviour is undefined.")
 
-#DISCOURSE_KEY = os.environ['DISCOURSE_KEY']
+#DISCOURSE_KEY = os.getenv['DISCOURSE_KEY']
 #if not DISCOURSE_KEY or DISCOURSE_KEY == "":
 #    raise Exception("NewsAPI: No Discourse key was provided.")
 
@@ -31,6 +31,15 @@ LATEST_TOPICS = "latest.json?order=created&ascending=false"
 RELATIVE_OUTPUT_PATH = "src/data/news.json"
 def SINGLE_POST(id): return f"posts/{id}.json"
 def SINGLE_TOPIC(id): return f"t/{id}.json"
+
+try:
+    response = requests.get(FORUM_DOMAIN)
+    response.raise_for_status()
+except ConnectionError:
+    print("NewsAPI: (error) failed to connect to the server. Aborting.")
+    if ci_deploy:
+        sys.exit(0)
+    sys.exit(1)
 
 def parse_thumbnail(post_id):
     post_response = requests.get(FORUM_DOMAIN + SINGLE_POST(post_id)).json()
@@ -58,24 +67,7 @@ def parse_topic(topic):
     }
     return json
 
-request_failed = False
-try:
-    latest_topics = requests.get(FORUM_DOMAIN + LATEST_TOPICS).json()
-except ConnectionError:
-    print("NewsAPI: (error) failed to connect. Aborting.")
-    request_failed = True
-except Timeout:
-    print("NewsAPI: (error) the request timed out. Aborting.")
-    request_failed = True
-except RequestException as e:
-    print(f"NewsAPI: (error) aborting. An error occurred: {e}")
-    request_failed = True
-
-if request_failed:
-    if ci_deploy:
-        sys.exit(0)
-    else:
-        sys.exit(1)
+latest_topics = requests.get(FORUM_DOMAIN + LATEST_TOPICS).json()
 
 i = 0
 parsed_topics = []
