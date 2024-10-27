@@ -10,6 +10,7 @@ except Exception as e:
     subprocess.run([sys.executable, '-m', 'pip', 'install', 'requests'])
     import requests
 
+from requests.exceptions import ConnectionError
 
 WORKSPACE = ''
 ci_deploy = False
