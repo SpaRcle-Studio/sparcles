@@ -15,7 +15,7 @@ from requests.exceptions import ConnectionError
 WORKSPACE = ''
 ci_deploy = False
 try:
-    if os.environ('GITHUB_WORKSPACE'):
+    if os.getenv('GITHUB_WORKSPACE') and os.getenv('GITHUB_WORKSPACE') != '':
         WORKSPACE = os.getenv('GITHUB_WORKSPACE')
         ci_deploy = True
 except Exception as e:
