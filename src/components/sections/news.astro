@@ -3,9 +3,8 @@ import Container from "../Container.astro";
 import NewsCard from "../NewsCard.astro";
 import DataList from '../../data/news.json'
 
-const items = DataList.news
+const items = (DataList as { news: any }).news || [];
 ---
-
 
 
 <section class="news bg-black">
@@ -15,18 +14,28 @@ const items = DataList.news
                 <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">NEWS</h1>
             </div>
             <ul class="news__container py-5 flex flex-wrap justify-center items-center">
-                {items.map((item) => {
-                    if(!item.icon) {
-                        item.icon = 'logos/logo.png';
-                    }
-                    return (
-                        <NewsCard icon={item.icon}
-                              title={item.title}
-                              description={item.description}
-                              link={item.link}
-                        />
-                    )
-                })}
+                {items.length === 0 ? (
+                    <NewsCard 
+                        icon=""
+                        title=""
+                        description=""
+                        link=""
+                    />
+                ) : (
+                    items.map((item: { icon: string; title: string; description: string; link: string; }) => {
+                        if (!item.icon) {
+                            item.icon = 'logos/logo.png';
+                        }
+                        return (
+                            <NewsCard 
+                                icon={item.icon}
+                                title={item.title}
+                                description={item.description}
+                                link={item.link}
+                            />
+                        );
+                    })
+                )}
             </ul>
         </div>
     </Container>
