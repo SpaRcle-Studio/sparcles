@@ -1,9 +1,14 @@
 ---
 import Container from "../Container.astro";
 import NewsCard from "../NewsCard.astro";
-import DataList from '../../data/news.json'
+import { fetchTopics } from "../../api/Topics";
 
-const items = (DataList as { news: any }).news || [];
+let items: { icon?: string; title: string; description: string; link: string }[] = [];
+try {
+    items = await fetchTopics();
+} catch (error) {
+    console.error("Failed to fetch news topics:", error);
+}
 ---
 
 
@@ -15,23 +20,18 @@ const items = (DataList as { news: any }).news || [];
             </div>
             <ul class="news__container py-5 flex flex-wrap justify-center items-center">
                 {items.length === 0 ? (
-                    <NewsCard 
-                        icon=""
-                        title=""
-                        description=""
-                        link=""
-                    />
+                    <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">No News</h1>
                 ) : (
-                    items.map((item: { icon: string; title: string; description: string; link: string; }) => {
-                        if (!item.icon) {
-                            item.icon = 'logos/logo.png';
+                    items.map((topics) => {
+                        if (!topics.icon) {
+                            topics.icon = 'logos/logo.png';
                         }
                         return (
                             <NewsCard 
-                                icon={item.icon}
-                                title={item.title}
-                                description={item.description}
-                                link={item.link}
+                                icon={topics.icon}
+                                title={topics.title}
+                                description={topics.description}
+                                link={topics.link}
                             />
                         );
                     })
@@ -40,3 +40,5 @@ const items = (DataList as { news: any }).news || [];
         </div>
     </Container>
 </section>
+
+
