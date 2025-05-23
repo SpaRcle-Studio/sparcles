@@ -3,7 +3,7 @@ const dateYear = new Date().getFullYear();
 ---
 
 <footer class="footer bg-custom_components">
-    <div class="max-w-container footer__container flex flex-col justify-center items-center p-3 h-24 sm:flex-row sm:justify-between">
+    <div class="max-w-container footer__container flex flex-col justify-center items-center p-3 min-h-24 sm:flex-row sm:justify-between">
         <div class="footer-container flex flex-row mb-2 sm:mb-0">
             <a href="https://github.com/SpaRcle-Studio/">
                 <img src="/community/github.png" alt="SpaRcle Studio's GitHub" class="community-logo w-8 mx-1 sm:mx-2 lg:mx-10"/>
@@ -15,7 +15,10 @@ const dateYear = new Date().getFullYear();
                 <img src="/community/forum.png" alt="SpaRcle Studio's Forum" class="community-logo w-8 mx-1 sm:mx-2 lg:mx-10"/>
             </a>
         </div>
-        <p class="note font-jbmono text-xs sm:text-sm md:text-base">SpaRcle Studio {dateYear}</p>
+        <div class="flex flex-col gap-1 items-center mb-1 sm:mb-0">
+            <p class="note font-jbmono text-xs sm:text-sm md:text-base">SpaRcle Studio {dateYear}</p>
+            <iframe src="https://status.sparcles.dev/embed-badges/live-status?align=start&background-light=f5f5f5&text-light=000000&background-dark=171717&text-dark=ffffff" width="190" height="30" loading="lazy" frameborder="0" scrolling="no" style="color-scheme: light dark;"></iframe>
+        </div>
         <div class="creators sm:m-2 flex justify-center items-center flex-col">
             <p class="note font-jbmono text-xs sm:text-sm md:text-base">Made by Vega7 & innerviewer.</p>
         </div>
