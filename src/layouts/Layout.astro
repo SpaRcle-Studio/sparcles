@@ -39,11 +39,30 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="text-white" style="background: radial-gradient(1200px 700px at 20% 0%, rgba(var(--accent), 0.12), transparent 55%), radial-gradient(900px 600px at 80% 10%, rgba(var(--accent-2), 0.09), transparent 60%), rgb(var(--bg));">
+	<body class="text-white">
 		<Header />
 		<div class="layout flex-1">
 			<slot />
 		</div>
 		<Footer />
+		<button class="scroll-top focus-ring" type="button" aria-label="Scroll back to top" data-scroll-top>
+			Top
+		</button>
+		<script is:inline>
+			const button = document.querySelector('[data-scroll-top]');
+			if (button) {
+				const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				const update = () => {
+					const shouldShow = window.scrollY > 420;
+					button.toggleAttribute('data-visible', shouldShow);
+				};
+				button.addEventListener('click', () => {
+					window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+				});
+				update();
+				window.addEventListener('scroll', update, { passive: true });
+				window.addEventListener('resize', update);
+			}
+		</script>
 	</body>
 </html>

@@ -9,26 +9,42 @@ const setExpanded = (expanded: boolean) => {
 
 setExpanded(false);
 
+const mobileOpenClasses = [
+    "flex",
+    "flex-col",
+    "items-center",
+    "absolute",
+    "top-20",
+    "left-0",
+    "w-full",
+    "py-4",
+    "gap-2",
+    "z-50",
+    "mobile-nav",
+];
+
+const isOpen = () => !!navBar && !navBar.classList.contains("hidden");
+
+const openMenu = () => {
+    if (!navBar) return;
+    navBar.classList.remove("hidden");
+    navBar.classList.add(...mobileOpenClasses);
+    setExpanded(true);
+    tham?.classList.add("tham-active");
+};
+
+const closeMenu = () => {
+    if (!navBar) return;
+    navBar.classList.add("hidden");
+    navBar.classList.remove(...mobileOpenClasses);
+    setExpanded(false);
+    tham?.classList.remove("tham-active");
+};
+
 const toggle = () => {
     if (!navBar) return;
-
-    const nowHidden = navBar.classList.toggle("hidden");
-
-    navBar.classList.toggle("flex");
-    navBar.classList.toggle("flex-col");
-    navBar.classList.toggle("items-center");
-    navBar.classList.toggle("absolute");
-    navBar.classList.toggle("top-20");
-    navBar.classList.toggle("left-0");
-    navBar.classList.toggle("w-full");
-
-    // visual treatment for mobile flyout
-    navBar.classList.toggle("glass");
-    navBar.classList.toggle("py-4");
-    navBar.classList.toggle("gap-2");
-
-    setExpanded(!nowHidden);
-    tham?.classList.toggle("tham-active");
+    if (isOpen()) closeMenu();
+    else openMenu();
 };
 
 button?.addEventListener("click", toggle);
@@ -44,5 +60,10 @@ navBar?.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
     if (!navBar || navBar.classList.contains("hidden")) return;
-    toggle();
+    closeMenu();
+});
+
+window.addEventListener("resize", () => {
+    const desktop = window.matchMedia("(min-width: 640px)").matches;
+    if (desktop) closeMenu();
 });

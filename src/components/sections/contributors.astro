@@ -15,9 +15,31 @@ const link = "https://github.com/SpaRcle-Studio/SREngine/graphs/contributors";
 			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
 			<div class="card" style="padding: 18px 16px; overflow: hidden;">
 				<a href={link} class="focus-ring" style="display: block;">
-					<img src={img} alt="Contributors wall for the SpaRcle Engine repository" loading="lazy" decoding="async" style="width: 35%; height: auto; display: block;" />
+					<img
+						src={img}
+						alt="Contributors wall for the SpaRcle Engine repository"
+						loading="lazy"
+						decoding="async"
+						class="contributors__img"
+					/>
 				</a>
 			</div>
 		</div>
 	</Container>
+
+	<style>
+		.contributors__img {
+			display: block;
+			height: auto;
+			width: 100%;
+			max-width: 940px;
+			margin: 0 auto;
+		}
+		@media (min-width: 1024px) {
+			.contributors__img {
+				width: 50%;
+				max-width: none;
+			}
+		}
+	</style>
 </section>

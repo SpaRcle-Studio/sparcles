@@ -2,23 +2,23 @@
 const dateYear = new Date().getFullYear();
 ---
 
-<footer class="footer" style="border-top: 1px solid rgba(var(--border), 0.7); background: rgba(var(--surface), 0.35);">
+	<footer class="footer" style="border-top: 1px solid rgba(var(--border), 0.7); background: rgba(var(--surface), 0.35);">
     <div class="max-w-container footer__container flex flex-col justify-center items-center p-5 min-h-24 sm:flex-row sm:justify-between">
-		<div class="flex items-center gap-3 mb-3 sm:mb-0">
+		<div class="flex items-center gap-3 mb-3 sm:mb-0 sm:flex-1">
 			<img src="/logos/logo.png" alt="SpaRcle Engine logo" class="w-8 h-8" loading="lazy" decoding="async" />
 			<div>
 				<div class="font-montserrat font-semibold" style="letter-spacing: 0.02em;">SpaRcle Engine</div>
 				<div class="font-jbmono" style="font-size: 12px; color: rgba(var(--muted), 1);">cross-platform 2D/3D game engine in C++</div>
 			</div>
 		</div>
-		<nav aria-label="Footer links" class="flex flex-wrap justify-center items-center gap-3 mb-3 sm:mb-0">
+		<nav aria-label="Footer links" class="flex flex-wrap justify-center items-center gap-3 mb-3 sm:mb-0 sm:flex-1">
 			<a href="https://github.com/SpaRcle-Studio/SREngine" class="focus-ring font-montserrat" style="font-size: 13px; color: rgba(var(--text), 0.9);">GitHub</a>
 			<a href="https://docs.sparcles.dev" class="focus-ring font-montserrat" style="font-size: 13px; color: rgba(var(--text), 0.9);">Docs</a>
 			<a href="https://discord.gg/NHuhNwFtYQ" class="focus-ring font-montserrat" style="font-size: 13px; color: rgba(var(--text), 0.9);">Discord</a>
 			<a href="https://opencollective.com/sparcle-studio" class="focus-ring font-montserrat" style="font-size: 13px; color: rgba(var(--text), 0.9);">OpenCollective</a>
 			<a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="focus-ring font-montserrat" style="font-size: 13px; color: rgba(var(--text), 0.9);">Releases</a>
 		</nav>
-		<div class="flex flex-col gap-1 items-center sm:items-end">
+		<div class="flex flex-col gap-1 items-center sm:items-end sm:flex-1">
 			<p class="note font-jbmono text-xs sm:text-sm" style="color: rgba(var(--muted), 1);">MIT License — free for commercial and personal use</p>
 			<p class="note font-jbmono text-xs sm:text-sm" style="color: rgba(var(--muted), 1);">© {dateYear} SpaRcle Studio</p>
 		</div>
