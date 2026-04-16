@@ -50,7 +50,8 @@
 		<div class="demo pt-10 xl:pt-0 xl:w-1/2" style="position: relative;">
 			<div
 				class="glass"
-				style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transform: perspective(1400px) rotateY(-8deg) rotateX(2deg); border: 1px solid rgba(var(--border), 0.75);"
+				data-tilt="sparcle-editor-window"
+				style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(var(--border), 0.75); will-change: transform; transform: perspective(1400px) rotateY(calc(-8deg + var(--tilt-ry, 0deg))) rotateX(calc(2deg + var(--tilt-rx, 0deg))); transition: transform 180ms ease;"
 			>
 				<div
 					aria-hidden="true"
@@ -84,3 +85,58 @@
 		</div>
 	</div>
 </section>
+
+	<script is:inline>
+		(() => {
+			const el = document.querySelector('[data-tilt="sparcle-editor-window"]');
+			if (!el) return;
+
+		// Skip on touch/coarse pointers or when user prefers reduced motion.
+		if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+			const maxRX = 3; // degrees
+			const maxRY = 5; // degrees
+			let raf = 0;
+			let lastEvt = null;
+
+			const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+		const apply = () => {
+			raf = 0;
+			const evt = lastEvt;
+			lastEvt = null;
+			if (!evt) return;
+
+				const r = el.getBoundingClientRect();
+				const cx = r.left + r.width / 2;
+				const cy = r.top + r.height / 2;
+				const halfW = Math.max(1, r.width / 2);
+				const halfH = Math.max(1, r.height / 2);
+
+				// Map cursor position to -1..1 relative to the element center.
+				// Clamp so the tilt doesn't grow unbounded when the cursor is far away.
+				const nx = clamp((evt.clientX - cx) / halfW, -1, 1);
+				const ny = clamp((evt.clientY - cy) / halfH, -1, 1);
+
+			const rx = (-ny * maxRX).toFixed(2) + 'deg';
+			const ry = (nx * maxRY).toFixed(2) + 'deg';
+			el.style.setProperty('--tilt-rx', rx);
+			el.style.setProperty('--tilt-ry', ry);
+		};
+
+		const onMove = (e) => {
+			if (e.pointerType && e.pointerType !== 'mouse') return;
+			lastEvt = e;
+			if (!raf) raf = requestAnimationFrame(apply);
+		};
+
+		const reset = () => {
+			el.style.setProperty('--tilt-rx', '0deg');
+			el.style.setProperty('--tilt-ry', '0deg');
+		};
+
+			window.addEventListener('pointermove', onMove, { passive: true });
+			window.addEventListener('blur', reset);
+		})();
+	</script>
