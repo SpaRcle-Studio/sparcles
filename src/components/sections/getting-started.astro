@@ -1,0 +1,50 @@
+---
+import Container from "../Container.astro";
+
+const buildSnippet = `# Linux (Ninja)
+mkdir build
+cd build
+cmake -G "Ninja" ../ -DCMAKE_BUILD_TYPE=Debug
+cmake --build . -j 10
+
+# Windows (Visual Studio via CMake)
+mkdir build
+cd build
+cmake -G "Visual Studio 17 2022" ../ -DCMAKE_BUILD_TYPE=Debug
+`;
+---
+
+<section id="getting-started" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Get building in minutes</h2>
+				<a href="https://docs.sparcles.dev" class="btn-secondary focus-ring font-montserrat" style="padding: 10px 14px;">Full Documentation →</a>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 14px; align-items: start;">
+				<div class="codeblock" style="grid-column: span 12;">
+					<pre><code class="language-bash">{buildSnippet}</code></pre>
+				</div>
+				<div class="card" style="grid-column: span 12; padding: 18px 16px;">
+					<h3 class="font-montserrat font-semibold" style="font-size: 18px;">Notes</h3>
+					<p class="font-jbmono" style="margin-top: 10px; color: rgba(var(--muted), 1); font-size: 13px; line-height: 1.7;">
+						Build steps are taken from the upstream guides. For platform-specific prerequisites (Vulkan SDK on Windows, distro packages on Linux), use the full docs.
+					</p>
+					<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+						<a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/LinuxBuild.md" class="btn-secondary focus-ring font-montserrat">Linux guide</a>
+						<a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/WindowsBuild.md" class="btn-secondary focus-ring font-montserrat">Windows guide</a>
+						<a href="https://github.com/SpaRcle-Studio/SREngine" class="btn-secondary focus-ring font-montserrat">Source repo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
+
+	<style>
+		@media (min-width: 900px) {
+			.grid > div:first-child { grid-column: 1 / span 8; }
+			.grid > div:last-child { grid-column: 9 / span 4; }
+		}
+	</style>
+</section>

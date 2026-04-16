@@ -1,0 +1,41 @@
+---
+import Container from "../Container.astro";
+
+const libs = [
+	{ name: "ImGUI", url: "https://github.com/ocornut/imgui" },
+	{ name: "Assimp", url: "https://github.com/assimp/assimp" },
+	{ name: "Vulkan Memory Allocator", url: "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator" },
+	{ name: "PhysX", url: "https://github.com/NVIDIAGameWorks/PhysX" },
+    { name: "OpenAL", url: "https://github.com/kcat/openal-soft"},
+];
+---
+
+<section id="libraries" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">
+					Standing on the shoulders of giants
+				</h2>
+				<span class="badge" aria-hidden="true">Core dependencies</span>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="card" style="padding: 18px 16px;">
+				<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+					{libs.map((l) => (
+						<a
+							href={l.url}
+							target="_blank"
+							rel="noreferrer"
+							class="focus-ring"
+							style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(var(--border), 0.8); background: rgba(var(--surface), 0.40);"
+						>
+							<span class="font-montserrat" style="font-weight: 600; letter-spacing: 0.01em;">{l.name}</span>
+							<span aria-hidden="true" class="font-jbmono" style="opacity: 0.75;">→</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</Container>
+</section>

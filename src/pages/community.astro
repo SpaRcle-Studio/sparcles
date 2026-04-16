@@ -3,5 +3,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Community'>
-    <h1 class="label">Join us!</p>
+    <section class="max-w-container" style="padding: 90px 24px 80px;">
+        <div class="glass anim-float-in" style="border-radius: var(--radius); padding: 22px 18px; max-width: 880px; margin: 0 auto;">
+            <h1 class="font-montserrat font-semibold tracking-tight text-3xl sm:text-5xl">Join the community</h1>
+            <p class="font-jbmono text-sm sm:text-base" style="color: rgba(var(--muted), 1); margin-top: 12px; max-width: 62ch;">Get feedback, follow progress, and share what you’re building with SpaRcle Engine.</p>
+            <div style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="https://discord.gg/RXndN43QF8" class="btn-primary focus-ring font-montserrat">Discord<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span></a>
+                <a href="https://forum.sparcles.dev/" class="btn-secondary focus-ring font-montserrat">Forum</a>
+                <a href="https://github.com/SpaRcle-Studio/" class="btn-secondary focus-ring font-montserrat">GitHub</a>
+            </div>
+        </div>
+    </section>
 </Layout>

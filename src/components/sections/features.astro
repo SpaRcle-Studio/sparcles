@@ -1,0 +1,108 @@
+---
+import Container from "../Container.astro";
+
+const features = [
+	{
+		title: "Custom Shader Language",
+		description:
+			"A proprietary shader language with built-in reflection and cross-compilation. Write once, target multiple backends without maintaining separate shader codebases.",
+		icon: "<>",
+	},
+	{
+		title: "Vulkan-Powered Renderer",
+		description:
+			"Built from the ground up on Vulkan via EvoVulkan, optimized for raw throughput and modern GPU architectures. Not a wrapper — a purpose-built pipeline.",
+		icon: "VK",
+	},
+	{
+		title: "Modular Render Graph",
+		description:
+			"Fully customizable rendering pipeline. Define your own passes, targets, and execution order. The engine gets out of your way.",
+		icon: "RG",
+	},
+	{
+		title: "C++ Hot-Reload Scripting",
+		description:
+			"Write game logic in native C++ and reload it at runtime without losing object state. No scripting language overhead, no context switching.",
+		icon: "HR",
+	},
+	{
+		title: "Compile-Time Reflection",
+		description:
+			"A metadata and reflection system built at compile time. Enables editor introspection, serialization, and tooling without runtime overhead.",
+		icon: "RT",
+	},
+	{
+		title: "Multi-Camera & Multi-Viewport",
+		description:
+			"Render to multiple cameras, viewports, and render targets simultaneously. Ideal for split-screen, editor views, and post-processing chains.",
+		icon: "MV",
+	},
+	{
+		title: "Procedural World System",
+		description:
+			"Generate vast, endless worlds using a region and chunk subdivision system. Built for open-world and procedural game architectures from day one.",
+		icon: "PW",
+	},
+	{
+		title: "Zero-Install Deployment",
+		description:
+			"The entire engine ships as a single ~80 MB executable. No installer, no dependencies to wrangle — just run it.",
+		icon: "ZI",
+	},
+];
+---
+
+<section id="features" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">
+					What makes SpaRcle different
+				</h2>
+				<span class="badge" aria-hidden="true">Engine-level control</span>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 14px;">
+				{features.map((f, i) => (
+					<article
+						class={`card card-hover anim-float-in ${i < 3 ? "anim-delay-1" : "anim-delay-2"}`}
+						style={`grid-column: span 12; padding: 18px 16px; position: relative; overflow: hidden;`}
+					>
+						<div aria-hidden="true" style="position: absolute; inset: -1px; opacity: 0.18; background: radial-gradient(380px 140px at 14% 10%, rgba(var(--accent), 0.25), transparent 60%), radial-gradient(420px 160px at 86% 30%, rgba(var(--accent-2), 0.20), transparent 62%);"></div>
+						<div style="position: relative; display: flex; gap: 12px; align-items: flex-start;">
+							<div
+								class="badge badge-strong"
+								style="min-width: 42px; justify-content: center; padding: 10px 12px;"
+								aria-hidden="true"
+							>
+								{f.icon}
+							</div>
+							<div>
+								<h3 class="font-montserrat font-semibold" style="font-size: 18px; letter-spacing: -0.01em;">
+									{f.title}
+								</h3>
+								<p class="font-jbmono" style="margin-top: 8px; color: rgba(var(--muted), 1); font-size: 13px; line-height: 1.6;">
+									{f.description}
+								</p>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</Container>
+
+	<style>
+		@media (min-width: 900px) {
+			.grid > article:nth-child(1) { grid-column: 1 / span 7; }
+			.grid > article:nth-child(2) { grid-column: 8 / span 5; }
+			.grid > article:nth-child(3) { grid-column: 1 / span 5; }
+			.grid > article:nth-child(4) { grid-column: 6 / span 7; }
+			.grid > article:nth-child(5) { grid-column: 1 / span 6; }
+			.grid > article:nth-child(6) { grid-column: 7 / span 6; }
+			.grid > article:nth-child(7) { grid-column: 1 / span 8; }
+			.grid > article:nth-child(8) { grid-column: 9 / span 4; }
+		}
+	</style>
+</section>

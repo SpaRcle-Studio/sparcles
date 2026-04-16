@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import DownloadCard from '../components/DownloadCard.astro';
 ---
 
-<Layout title='Downloads'>
-	<section class="section__download">
-        <div class="download__container flex flex-col justify-center items-center px-5 py-10 sm:p-7 md:p-12 lg:p-24 mt-24">
-            <h1 class="font-bold text-4xl sm:text-6xl mb-14">Download Engine</h1>
+	<Layout title='Downloads'>
+		<section class="section__download">
+        <div class="download__container flex flex-col justify-center items-center px-5 py-10 sm:p-7 md:p-12 lg:p-24 mt-10">
+            <h1 class="font-montserrat font-semibold tracking-tight text-4xl sm:text-6xl mb-6 anim-float-in">Download SpaRcle Engine</h1>
+            <p class="font-jbmono text-sm sm:text-base text-white/75 mb-10 max-w-[62ch] text-center anim-float-in anim-delay-1">Grab a release build or build from source. The engine is evolving quickly; the docs cover the current setup steps.</p>
             <div class="download__body flex flex-wrap">
                 <DownloadCard>
                     <div class="card__container flex flex-col sm:flex-row">
@@ -17,21 +18,9 @@ import DownloadCard from '../components/DownloadCard.astro';
                             <h2 class="OS__version text-2xl font-bold mb-2">For Linux?</h2>
                             <p class="download__description pb-5">If you are using Linux, you can download or build SREngine yourself using one of the following methods</p>
                             <div class="card__buttons flex flex-col sm:flex-row">
-                                <div class="links__download cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 mb-5 text-black w-fit sm:mr-5 sm:mb-0">
-                                    <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="download font-jbmono font-medium">
-                                        Releases
-                                    </a>
-                                </div>
-                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 mb-5 text-white w-fit sm:mr-5 sm:mb-0">
-                                    <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/LinuxBuild.md" class="download font-jbmono font-medium">
-                                       Build
-                                    </a>
-                                </div>
-                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 mb-5 text-white w-fit sm:mr-5 sm:mb-0">
-                                    <a href="https://github.com/flathub/flathub/pull/5482" class="download font-jbmono font-medium">
-                                       Flathub
-                                    </a>
-                                </div>
+                                <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="btn-primary focus-ring font-montserrat mb-3 sm:mb-0 sm:mr-3">Releases<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span></a>
+                                <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/LinuxBuild.md" class="btn-secondary focus-ring font-montserrat mb-3 sm:mb-0 sm:mr-3">Build from source</a>
+                                <a href="https://github.com/flathub/flathub/pull/5482" class="btn-secondary focus-ring font-montserrat">Flathub</a>
                             </div>
                         </div>
                     </div>
@@ -45,16 +34,8 @@ import DownloadCard from '../components/DownloadCard.astro';
                             <h2 class="OS__version text-2xl font-bold mb-2">For Windows?</h2>
                             <p class="download__description pb-5">If you are using Windows, you can download or build SREngine yourself using one of the following methods</p>
                             <div class="card__buttons flex flex-row">
-                                <div class="links__download cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 mr-5 text-black w-fit sm:mr-5 sm:mb-0">
-                                    <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="download font-jbmono font-medium">
-                                        Releases
-                                    </a>
-                                </div>
-                                <div class="links__download bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl border-2 border-slate-500 p-3 text-white w-fit sm:mr-5 sm:mb-0">
-                                    <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/WindowsBuild.md" class="download font-jbmono font-medium">
-                                       Build
-                                    </a>
-                                </div>
+                                <a href="https://github.com/SpaRcle-Studio/SREngine/releases" class="btn-primary focus-ring font-montserrat mr-3">Releases<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span></a>
+                                <a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/Documentation/WindowsBuild.md" class="btn-secondary focus-ring font-montserrat">Build from source</a>
                             </div>
                         </div>
                     </div>
@@ -62,4 +43,4 @@ import DownloadCard from '../components/DownloadCard.astro';
             </div>
         </div>
     </section>
-</Layout>
+	</Layout>

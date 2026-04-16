@@ -1,0 +1,68 @@
+---
+import Container from "../Container.astro";
+
+const platforms = [
+	{ name: "Windows 10 / 11", status: "Stable", type: "good" },
+	{ name: "Linux X11", status: "Stable (partial)", type: "dev" },
+	{ name: "Linux Wayland", status: "Stable (partial)", type: "dev" },
+	{ name: "Android", status: "Work in progress.", type: "warn" },
+	{ name: "iOS", status: "Not planned near-term", type: "na" },
+	{ name: "macOS", status: "Not planned near-term", type: "na" },
+];
+
+const compilers = [
+	{ name: "MSVC", status: "Stable", type: "good" },
+	{ name: "GCC", status: "Stable", type: "good" },
+	{ name: "Clang", status: "Stable", type: "good" },
+	{ name: "MinGW", status: "Partial support", type: "warn" },
+	{ name: "Cygwin", status: "Partial support", type: "warn" },
+];
+
+const badgeClass = (t: string) =>
+	t === "good" ? "status status-good" : t === "warn" ? "status status-warn" : t === "dev" ? "status status-dev" : "status status-na";
+---
+
+<section id="platforms" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">
+					Runs where you need it
+				</h2>
+				<span class="badge" aria-hidden="true">Cross-platform targets</span>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 14px;">
+				<div class="card" style="grid-column: span 12; padding: 18px 16px;">
+					<h3 class="font-montserrat font-semibold" style="font-size: 18px;">Platforms</h3>
+					<div style="margin-top: 12px; display: grid; gap: 10px;">
+						{platforms.map((p) => (
+							<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+								<span class="font-jbmono" style="color: rgba(var(--text), 0.92);">{p.name}</span>
+								<span class={badgeClass(p.type)}>{p.status}</span>
+							</div>
+						))}
+					</div>
+				</div>
+				<div class="card" style="grid-column: span 12; padding: 18px 16px;">
+					<h3 class="font-montserrat font-semibold" style="font-size: 18px;">Compilers</h3>
+					<div style="margin-top: 12px; display: grid; gap: 10px;">
+						{compilers.map((c) => (
+							<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+								<span class="font-jbmono" style="color: rgba(var(--text), 0.92);">{c.name}</span>
+								<span class={badgeClass(c.type)}>{c.status}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
+
+	<style>
+		@media (min-width: 900px) {
+			.grid > div:first-child { grid-column: 1 / span 7; }
+			.grid > div:last-child { grid-column: 8 / span 5; }
+		}
+	</style>
+</section>

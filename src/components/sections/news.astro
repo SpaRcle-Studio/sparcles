@@ -8,27 +8,33 @@ items = await fetchTopics();
 ---
 
 
-<section class="news bg-black">
+<section class="news" style="padding-top: 16px;">
     <Container>
         <div class="news__container">
             <div class="news__header flex flex-row justify-between items-center pb-5">
-                <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">NEWS</h1>
+                <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Latest updates</h2>
             </div>
-            <ul class="news__container py-5 flex flex-wrap justify-center items-center">
+            <ul class="news__container py-5 flex flex-wrap justify-center items-stretch gap-4">
                 {items.length === 0 ? (
-                    <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">No News</h1>
+                    <div class="glass anim-float-in" style="border-radius: var(--radius); padding: 18px 16px; max-width: 820px; width: 100%;">
+                        <p class="font-jbmono text-sm" style="color: rgba(var(--muted), 1);">No news fetched right now. Check back soon, or jump into the forum.</p>
+                        <div style="margin-top: 12px;">
+                            <a href="https://forum.sparcles.dev/" class="btn-secondary focus-ring font-montserrat">Open the forum</a>
+                        </div>
+                    </div>
                 ) : (
-                    items.map((topics) => (
-                        <NewsCard
-                            icon={topics.icon || "logos/logo.png"}
-                            title={topics.title}
-                            description={topics.description}
-                            link={topics.link}
-                        />
+                    items.map((topics, index) => (
+                        <div class={`anim-float-in ${index === 0 ? 'anim-delay-1' : 'anim-delay-2'}`}>
+                            <NewsCard
+                                icon={topics.icon || "logos/logo.png"}
+                                title={topics.title}
+                                description={topics.description}
+                                link={topics.link}
+                            />
+                        </div>
                     ))
                 )}
             </ul>
         </div>
     </Container>
 </section>
-

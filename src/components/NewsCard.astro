@@ -10,18 +10,39 @@ const { icon, title, description, link } = Astro.props;
 ---
 
 <li class="card mx-2 my-2 bg-card min-w-64 max-w-[400px] p-5 flex flex-col rounded-xl">
-    <div class="card__top w-fit mb-5">
-        <img src=`${icon}` alt=`${title}` class="w-full rounded-xl sm:h-[250px]"></img>
+    <div class="card__top w-full mb-5" style="overflow: hidden; border-radius: 16px; border: 1px solid rgba(var(--border), 0.7); background: rgba(var(--surface), 0.25);">
+        <img src={`${icon}`} alt={`${title}`} class="w-full sm:h-[250px]" loading="lazy" decoding="async" style="display: block; object-fit: cover; transform: scale(1.01);">
     </div>
     <div class="card__bottom h-[18rem] flex flex-col 2xl:flex-row 2xl:justify-between">
         <h2 class="title text-xl mb-4 font-bold 2xl:mr-5 2xl:mb-0">{title}</h2>
         <div class="card__description h-full min-h-[12rem] 2xl:max-w-[12rem] flex flex-col justify-between">
             <p class="description text-sm sm:text-base md:text-md">{description}</p>
-            <div class="news__button font-jbmono cursor-pointer px-3 py-1 border-2 border-cyan-500 hover:bg-cyan-500 hover:text-black transition-colors duration-200 w-fit rounded-3xl">
-                <a href=`${link}` class="news__link">
-                    View more
-                </a>
-            </div>
+            <a href={`${link}`} class="btn-secondary focus-ring font-montserrat text-sm" style="width: fit-content;">View topic<span aria-hidden="true" style="opacity: 0.75; font-family: 'JetBrains Mono', monospace;">→</span></a>
         </div>
     </div>
-</div>
+</li>
+
+<style>
+    .card {
+        background: rgba(var(--card), 0.7);
+        border: 1px solid rgba(var(--border), 0.7);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        will-change: transform;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(var(--accent), 0.55);
+        background: rgba(var(--card), 0.85);
+    }
+
+    .title {
+        font-family: Oxanium, "IBM Plex Sans", system-ui, sans-serif;
+        letter-spacing: -0.01em;
+    }
+
+    .description {
+        color: rgba(var(--muted), 1);
+    }
+</style>

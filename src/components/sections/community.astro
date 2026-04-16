@@ -1,0 +1,60 @@
+---
+import Container from "../Container.astro";
+---
+
+<section id="community" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Open source. Open doors.</h2>
+				<span class="badge" aria-hidden="true">Community + contribution</span>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 14px;">
+				<div class="card" style="grid-column: span 12; padding: 18px 16px;">
+					<h3 class="font-montserrat font-semibold" style="font-size: 18px;">Join the Discord</h3>
+					<p class="font-jbmono" style="margin-top: 10px; color: rgba(var(--muted), 1); font-size: 13px; line-height: 1.7;">
+						Share progress, ask renderer questions, and trade workflow tips with people building real projects. Dev builds move fast; Discord is where the latest context lives.
+					</p>
+					<div style="margin-top: 12px;">
+						<a href="https://discord.gg/NHuhNwFtYQ" class="btn-primary focus-ring font-montserrat" style="background: rgba(var(--accent-2), 0.14); border-color: rgba(var(--accent-2), 0.45);">
+							Join Discord
+							<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span>
+						</a>
+					</div>
+				</div>
+				<div class="card" style="grid-column: span 12; padding: 18px 16px;">
+					<h3 class="font-montserrat font-semibold" style="font-size: 18px;">Contribute on GitHub</h3>
+					<p class="font-jbmono" style="margin-top: 10px; color: rgba(var(--muted), 1); font-size: 13px; line-height: 1.7;">
+						Core branches are <span class="kbd">master</span> (releases) and <span class="kbd">dev</span> (active development), with <span class="kbd">features/*</span> and <span class="kbd">release/*</span> for focused work.
+					</p>
+					<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+						<a href="https://github.com/SpaRcle-Studio/SREngine" class="btn-secondary focus-ring font-montserrat">Repository</a>
+						<a href="https://github.com/SpaRcle-Studio/SREngine/issues" class="btn-secondary focus-ring font-montserrat">Issues</a>
+						<a href="https://github.com/SpaRcle-Studio/SREngine/blob/dev/README.md" class="btn-secondary focus-ring font-montserrat">README</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="card" style="margin-top: 14px; padding: 18px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+				<div>
+					<div class="font-montserrat font-semibold" style="font-size: 18px;">Sponsor development</div>
+					<div class="font-jbmono" style="margin-top: 6px; color: rgba(var(--muted), 1); font-size: 13px;">
+						Help fund infrastructure, builds, and long-term maintenance.
+					</div>
+				</div>
+				<a href="https://opencollective.com/sparcle-studio" class="btn-primary focus-ring font-montserrat">
+					OpenCollective
+					<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span>
+				</a>
+			</div>
+		</div>
+	</Container>
+
+	<style>
+		@media (min-width: 900px) {
+			.grid > div:first-child { grid-column: 1 / span 6; }
+			.grid > div:last-child { grid-column: 7 / span 6; }
+		}
+	</style>
+</section>

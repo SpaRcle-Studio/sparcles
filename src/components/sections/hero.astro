@@ -1,38 +1,86 @@
 ---
 ---
 
-<section class="hero bg-gradient-to-r from-slate-950 to-gray-900">
-    <div class="hero__container max-w-container w-full xl:flex xl:flex-row xl:justify-end p-5 sm:p-7 md:p-12 lg:p-24 items-center">
-        <div class="title__container mr-12 xl:w-2/3">
-            <div class="title flex flex-row items-center mb-5 md:mb-8 w-fit rounded-full">
-                <img src="logos/logo.png" alt="SpaRcle logo" class="title__logo hidden sm:block sm:w-12 md:w-14 lg:w-20">
-                <h1><span class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold font-systemui text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400">SpaRcle Engine</span></h1>
-            </div>
-            <p class="hero__description font-jbmono font-light text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:w-[570px]">SpaRcle Engine is an ongoing game engine developed in C++. It aims to establish a strong base for game creation and is currently in the early stages of development, emphasizing the creation of a versatile and efficient architecture.</p>
-            <div class="links__container flex flex-col pt-5 sm:flex-row sm:justify-start">
-                <div class="links__download cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 mb-5 text-black w-fit sm:mr-5 sm:mb-0 h-full">
-                    <a href="/download" class="download font-jbmono font-medium">
-                        Download
-                    </a>
-                </div>
-                <div class="links__about bg-transparent hover:bg-slate-500 cursor-pointer transition-colors duration-200 rounded-xl p-3 border-2 border-slate-500 w-fit">
-                    <a href="#about" class="about font-jbmono font-medium h-full">
-                        About SREngine
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="demo pt-[40px] xl:p-0 xl:w-2/3">
-            <video class="rabtoid__video rounded-3xl w-full h-full" loop autoplay muted playsinline>
-                <source src="hero/raptoid640.webm" type="video/webm" media="(max-width: 640px)" sizes="(max-width: 640px) 640px">
-                <source src="hero/raptoid768.webm" type="video/webm" media="(max-width: 768px)" sizes="(max-width: 768px) 768px">
-                <source src="hero/raptoid1024.webm" type="video/webm" media="(max-width: 1024px)" sizes="(max-width: 1024px) 1024px">
-                <source src="hero/raptoid1280.webm" type="video/webm" media="(max-width: 1280px)" sizes="(max-width: 1280px) 1280px">
-                <source src="hero/raptoid1536.webm" type="video/webm" media="(max-width: 1536px)" sizes="(max-width: 1536px) 1536px">
-                <source src="hero/raptoid.webm" type="video/webm" media="(max-width: 1920px)" sizes="(max-width: 1920px) 1536px">
-                <source src="hero/raptoid.mp4" type="video/mp4" media="(max-width: 1920px)" sizes="(max-width: 1920px) 1536px">
-                <source src="hero/raptoid.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
+<section class="hero" style="position: relative; overflow: clip;">
+	<div class="bg-grid" aria-hidden="true"></div>
+	<div class="bg-noise" aria-hidden="true"></div>
+	<div
+		class="hero__container max-w-container w-full xl:flex xl:flex-row xl:justify-between p-6 sm:p-10 md:p-14 lg:p-24 items-center"
+		style="position: relative;"
+	>
+		<div class="title__container xl:w-1/2">
+			<div class="anim-float-in">
+				<div class="title flex flex-row items-center mb-6 w-fit rounded-full" style="gap: 12px;">
+					<img
+						src="logos/logo.png"
+						alt="SpaRcle logo"
+						class="title__logo hidden sm:block sm:w-10 md:w-12 lg:w-14"
+						loading="eager"
+						decoding="async"
+					/>
+					<h1 class="font-montserrat font-semibold tracking-tight" style="line-height: 1.05;">
+						<span
+							class="block text-4xl sm:text-5xl lg:text-6xl"
+							style="background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;"
+						>
+							A cross-platform 2D/3D game engine. Built in C++. Built for speed.
+						</span>
+					</h1>
+				</div>
+			</div>
+			<p class="hero__description font-jbmono font-light text-sm sm:text-base lg:text-lg text-white/80 2xl:max-w-[46rem] anim-float-in anim-delay-1">
+				SpaRcle Engine gives you a Vulkan-powered renderer, hot-reload C++ scripting, and a fully customizable pipeline — all in a single 80 MB executable.
+			</p>
+			<div class="links__container flex flex-col pt-7 sm:flex-row sm:items-center sm:justify-start gap-3 anim-float-in anim-delay-2">
+				<a href="https://docs.sparcles.dev" class="btn-primary focus-ring font-montserrat">
+					Get Started
+					<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span>
+				</a>
+				<a href="https://github.com/SpaRcle-Studio/SREngine" class="btn-secondary focus-ring font-montserrat">
+					View on GitHub
+				</a>
+			</div>
+			<div class="anim-float-in anim-delay-3" style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; color: rgba(var(--muted), 1);">
+				<span class="badge badge-strong">Vulkan</span>
+				<span class="badge">C++ Hot Reload</span>
+				<span class="badge">Render Graph</span>
+				<span class="badge">~80 MB</span>
+			</div>
+		</div>
+		<div class="demo pt-10 xl:pt-0 xl:w-1/2" style="position: relative;">
+			<div
+				class="glass"
+				style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transform: perspective(1400px) rotateY(-8deg) rotateX(2deg); border: 1px solid rgba(var(--border), 0.75);"
+			>
+				<div
+					aria-hidden="true"
+					style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid rgba(var(--border), 0.75); background: rgba(var(--surface), 0.55);"
+				>
+					<span style="width: 10px; height: 10px; border-radius: 999px; background: rgba(255, 95, 86, 0.9);"></span>
+					<span style="width: 10px; height: 10px; border-radius: 999px; background: rgba(255, 189, 46, 0.9);"></span>
+					<span style="width: 10px; height: 10px; border-radius: 999px; background: rgba(39, 201, 63, 0.9);"></span>
+					<span class="font-jbmono" style="margin-left: 10px; font-size: 12px; color: rgba(var(--muted), 1);">SpaRcle Editor</span>
+				</div>
+				<picture>
+					<source srcset="hero/engine-demo-scene640.webp" media="(max-width: 640px)" sizes="640px" />
+					<source srcset="hero/engine-demo-scene768.webp" media="(max-width: 768px)" sizes="768px" />
+					<source srcset="hero/engine-demo-scene1024.webp" media="(max-width: 1024px)" sizes="1024px" />
+					<source srcset="hero/engine-demo-scene1280.webp" media="(max-width: 1280px)" sizes="1280px" />
+					<source srcset="hero/engine-demo-scene1536.webp" media="(max-width: 1536px)" sizes="1536px" />
+					<img
+						src="hero/engine-demo-scene1536.webp"
+						alt="SpaRcle Engine screenshot in the editor"
+						class="w-full h-full"
+						loading="eager"
+						decoding="async"
+						style="display: block;"
+					/>
+				</picture>
+			</div>
+			<div
+				aria-hidden="true"
+				style="position: absolute; inset: -10px; filter: blur(22px); opacity: 0.35; background: radial-gradient(500px 300px at 60% 45%, rgba(var(--accent), 0.18), transparent 60%), radial-gradient(500px 300px at 20% 60%, rgba(var(--accent-2), 0.16), transparent 60%); z-index: -1;"
+			></div>
+		</div>
+	</div>
 </section>

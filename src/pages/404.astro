@@ -5,9 +5,16 @@ import Container from "../components/Container.astro"
 
 <Layout title="404 Not Found">
     <Container>
-        <div class="404__container flex flex-col justify-center items-center">
-            <h2 class="text-6xl font-bold">Not Found</h2>
-            <h1 class="text-6xl font-medium">404</h1>
+        <div class="404__container flex flex-col justify-center items-center text-center" style="min-height: 50vh;">
+            <div class="glass anim-float-in" style="border-radius: var(--radius); padding: 26px 18px; max-width: 680px; width: 100%;">
+                <p class="font-jbmono text-xs" style="color: rgba(var(--muted), 1); letter-spacing: 0.08em;">ERROR</p>
+                <h1 class="font-montserrat font-semibold tracking-tight" style="margin-top: 10px; font-size: clamp(44px, 7vw, 72px);">404</h1>
+                <p class="font-jbmono text-sm sm:text-base" style="color: rgba(var(--muted), 1); margin-top: 10px;">That page doesn’t exist (yet).</p>
+                <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/" class="btn-primary focus-ring font-montserrat">Back home<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span></a>
+                    <a href="/download" class="btn-secondary focus-ring font-montserrat">Download</a>
+                </div>
+            </div>
         </div>
     </Container>
 </Layout>

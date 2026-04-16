@@ -1,0 +1,30 @@
+---
+import Container from "../Container.astro";
+---
+
+<section id="why" style="position: relative;">
+	<Container>
+		<div class="card" style="padding: 22px 18px; position: relative; overflow: hidden;">
+			<div aria-hidden="true" style="position: absolute; inset: -1px; opacity: 0.22; background: radial-gradient(700px 260px at 15% 20%, rgba(var(--accent), 0.22), transparent 60%), radial-gradient(700px 260px at 85% 50%, rgba(var(--accent-2), 0.18), transparent 62%);"></div>
+			<div style="position: relative; display: grid; gap: 14px;">
+				<h2 class="font-montserrat font-semibold" style="font-size: clamp(22px, 3vw, 38px); letter-spacing: -0.02em;">
+					Unity-like workflow. C++ performance. Your pipeline.
+				</h2>
+				<div class="divider" aria-hidden="true"></div>
+				<blockquote class="font-jbmono" style="color: rgba(var(--text), 0.92); line-height: 1.75; font-size: 14px; max-width: 92ch;">
+					SpaRcle Engine was built for developers who want the intuitive, component-based workflow of Unity — but refuse to sacrifice the performance and control that only native C++ can deliver.
+					<br /><br />
+					Rather than hiding the rendering pipeline behind abstractions, SpaRcle exposes it. You define the render graph. You write shaders in a language that cross-compiles automatically. You hot-reload your C++ game logic without restarting the editor.
+					<br /><br />
+					It’s not trying to be the biggest engine. It’s trying to be the right engine for developers who know what they want.
+				</blockquote>
+				<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+					<span class="badge">Component workflow</span>
+					<span class="badge">Native tooling</span>
+					<span class="badge">No runtime tax</span>
+					<span class="badge badge-strong">Own the pipeline</span>
+				</div>
+			</div>
+		</div>
+	</Container>
+</section>

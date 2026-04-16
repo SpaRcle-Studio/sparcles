@@ -12,36 +12,38 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="SpaRcle Studio's site" />
-        <meta name="viewport" content="width=device-width" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="SpaRcle Engine — cross-platform 2D/3D game engine in C++" />
+		<meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/logos/favicon-dark.ico" media="(prefers-color-scheme: light)">
         <link rel="icon" href="/logos/favicon-light.ico" media="(prefers-color-scheme: dark)">
-        <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
-            rel="stylesheet"
-            as="font"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-            as="font"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-            as="font"
-        />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body class="bg-gradient-to-r from-slate-950 to-gray-900 text-white">
-        <Header />
-        <div class="layout flex-1">
-            <slot />
-        </div>
-        <Footer />
-    </body>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+			rel="stylesheet"
+			as="font"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&display=swap"
+			rel="stylesheet"
+			as="font"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+			rel="stylesheet"
+			as="font"
+		/>
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="text-white" style="background: radial-gradient(1200px 700px at 20% 0%, rgba(var(--accent), 0.12), transparent 55%), radial-gradient(900px 600px at 80% 10%, rgba(var(--accent-2), 0.09), transparent 60%), rgb(var(--bg));">
+		<Header />
+		<div class="layout flex-1">
+			<slot />
+		</div>
+		<Footer />
+	</body>
 </html>

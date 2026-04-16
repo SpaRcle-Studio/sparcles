@@ -1,0 +1,70 @@
+---
+import Container from "../Container.astro";
+
+const images = [
+	{
+		src: "https://raw.githubusercontent.com/SpaRcle-Studio/Screenshots/master/SREngine_v1.0.0-latest_windows.x86_64_PCJCRWpP3e.jpg",
+		alt: "SpaRcle Engine editor screenshot (Windows release build)",
+		caption: "Editor + renderer (v1.0.0-dev)",
+	},
+	{
+		src: "https://raw.githubusercontent.com/SpaRcle-Studio/Screenshots/master/srengine_niTal6JIQP.jpg",
+		alt: "SpaRcle Engine scene view screenshot",
+		caption: "Scene view + tools",
+	},
+	{
+		src: "https://raw.githubusercontent.com/SpaRcle-Studio/Screenshots/master/srengine_yvtMUwNuKk.jpg",
+		alt: "SpaRcle Engine editor screenshot showing rendering features",
+		caption: "Lighting + materials",
+	},
+];
+---
+
+<section id="gallery" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">See it in action</h2>
+				<a href="https://github.com/SpaRcle-Studio/Screenshots" class="btn-secondary focus-ring font-montserrat" style="padding: 10px 14px;">
+					More screenshots
+				</a>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 14px;">
+				{images.map((img, idx) => (
+					<figure class="card card-hover" style={`grid-column: span 12; overflow: hidden; position: relative;`}
+					>
+						<a class="focus-ring" href={img.src} target="_blank" rel="noreferrer" style="display: block;">
+							<img
+								src={img.src}
+								alt={img.alt}
+								loading={idx === 0 ? "eager" : "lazy"}
+								decoding="async"
+								style="width: 100%; height: 100%; display: block; object-fit: cover; aspect-ratio: 16 / 9;"
+							/>
+							<figcaption
+								class="font-jbmono"
+								style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 12px; font-size: 12px; color: rgba(var(--text), 0.95); background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72)); opacity: 0; transform: translateY(8px); transition: opacity 180ms ease, transform 180ms ease;"
+							>
+								{img.caption}
+							</figcaption>
+						</a>
+					</figure>
+				))}
+			</div>
+		</div>
+	</Container>
+
+	<style>
+		figure:hover figcaption,
+		figure:focus-within figcaption {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		@media (min-width: 900px) {
+			.grid > figure:nth-child(1) { grid-column: 1 / span 7; }
+			.grid > figure:nth-child(2) { grid-column: 8 / span 5; }
+			.grid > figure:nth-child(3) { grid-column: 1 / span 12; }
+		}
+	</style>
+</section>

@@ -2,32 +2,35 @@
 import Container from "../Container.astro";
 ---
 
-<section class="about h-full bg-gradient-to-r from-slate-950 to-gray-900" id="about">
+<section class="about h-full" id="about">
     <Container>
-        <div class="about__container">
-            <div class="about__header flex flex-row justify-between items-center pb-5">
-                <h1 class="text-xl md:text-2xl 2xl:text-3xl font-bold font-inter">About SpaRcle Engine</h1>
+        <div class="about__container anim-float-in">
+            <div class="about__header flex flex-row justify-between items-center pb-6">
+                <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Built for iteration</h2>
             </div>
-            <div class="news__container flex flex-col xl:flex-row justify-between py-5">
-                <div class="video__container mb-10 xl:mr-10 xl:mb-0">
+            <div class="news__container flex flex-col xl:flex-row justify-between py-2 gap-10">
+                <div class="video__container xl:mr-2">
                     <picture>
                         <source srcset="hero/engine-demo-scene640.webp" media="(max-width: 640px)" sizes="640px">
                         <source srcset="hero/engine-demo-scene768.webp" media="(max-width: 768px)" sizes="768px">
                         <source srcset="hero/engine-demo-scene1024.webp" media="(max-width: 1024px)" sizes="1024px">
                         <source srcset="hero/engine-demo-scene1280.webp" media="(max-width: 1280px)" sizes="1280px">
                         <source srcset="hero/engine-demo-scene1536.webp" media="(max-width: 1536px)" sizes="1536px">
-                        <img src="hero/engine-demo-scene1536.webp" alt="engine-demo-scene" class="rounded-3xl w-full h-full">
+                        <img src="hero/engine-demo-scene1536.webp" alt="SpaRcle Engine editor screenshot" class="w-full h-full" loading="lazy" decoding="async" style="border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(var(--border), 0.7);">
                     </picture>
                   </div>
                 <div class="about__description max-w-[700px] flex flex-col">
                     <div class="about__description-container">
-                        <h4 class="description__title mb-10 sm:text-2xl md:text-3xl 2xl:text-6xl font-bold font-jbmono">SpaRcle Engine - cross-platform 2D/3D game engine in C++</h4>
-                        <p class="description text-sm sm:text-base lg:text-lg 2xl:text-xl font-jbmono mb-10">SpaRcle Engine is an ongoing game engine developed in C++. It aims to establish a strong base for game creation and is currently in the early stages of development, emphasizing the creation of a versatile and efficient architecture.</p>
+                        <h4 class="description__title mb-6 sm:text-2xl md:text-3xl 2xl:text-5xl font-semibold font-montserrat tracking-tight">
+                            A cross-platform 2D/3D engine in C++
+                        </h4>
+                        <p class="description text-sm sm:text-base lg:text-lg text-white/80 font-jbmono mb-8">
+                            SpaRcle Engine is early-stage, but ambitious: the goal is a strong core you can build on for years. Clean systems, readable code, and a workflow that makes creating games feel fast.
+                        </p>
                     </div>
-                    <div class="link__button w-fit font-jbmono cursor-pointer hover:bg-cyan-200 transition-colors duration-200 bg-cyan-400 rounded-xl p-3 text-black">
-                        <a href="https://github.com/SpaRcle-Studio/SREngine" class="button">
-                            Go to repo
-                        </a>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <a href="https://github.com/SpaRcle-Studio/SREngine" class="btn-primary focus-ring font-montserrat">View source<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span></a>
+                        <a href="https://docs.sparcles.dev/latest/" class="btn-secondary focus-ring font-montserrat">Read the docs</a>
                     </div>
                 </div>
             </div>

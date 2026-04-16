@@ -1,0 +1,24 @@
+---
+const stats = [
+	{ label: "100+ Stars", icon: "⭐" },
+	{ label: "15+ Forks", icon: "🍴" },
+	{ label: "Active Contributors", icon: "👥" },
+	{ label: "8 Releases", icon: "📦" },
+	{ label: "2,100+ Commits", icon: "🧩" },
+];
+---
+
+<section aria-label="SpaRcle stats" style="position: relative;">
+	<div class="divider" aria-hidden="true"></div>
+	<div class="max-w-container" style="padding: 14px 24px;">
+		<div class="flex flex-wrap items-center justify-center gap-2" style="color: rgba(var(--muted), 1);">
+			{stats.map((s) => (
+				<span class="badge" style="background: rgba(var(--surface), 0.45);">
+					<span aria-hidden="true">{s.icon}</span>
+					<span>{s.label}</span>
+				</span>
+			))}
+		</div>
+	</div>
+	<div class="divider" aria-hidden="true"></div>
+</section>

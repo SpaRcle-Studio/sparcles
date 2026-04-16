@@ -1,0 +1,23 @@
+---
+import Container from "../Container.astro";
+
+const img = "https://contrib.rocks/image?repo=SpaRcle-Studio/SREngine";
+const link = "https://github.com/SpaRcle-Studio/SREngine/graphs/contributors";
+---
+
+<section id="contributors" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Built by the community</h2>
+				<a href={link} class="btn-secondary focus-ring font-montserrat" style="padding: 10px 14px;">Contributors graph</a>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="card" style="padding: 18px 16px; overflow: hidden;">
+				<a href={link} class="focus-ring" style="display: block;">
+					<img src={img} alt="Contributors wall for the SpaRcle Engine repository" loading="lazy" decoding="async" style="width: 35%; height: auto; display: block;" />
+				</a>
+			</div>
+		</div>
+	</Container>
+</section>

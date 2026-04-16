@@ -1,0 +1,39 @@
+---
+import Container from "../Container.astro";
+
+const release = {
+	version: "SpaRcle Engine 1.0.0-dev",
+	date: "March 7, 2026",
+	url: "https://github.com/SpaRcle-Studio/SREngine/releases",
+};
+---
+
+<section id="releases" style="position: relative;">
+	<Container>
+		<div class="anim-float-in">
+			<div class="flex items-end justify-between gap-6" style="padding-bottom: 18px;">
+				<h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold font-montserrat tracking-tight">Latest Release</h2>
+				<span class="badge" aria-hidden="true">Changelog + downloads</span>
+			</div>
+			<div class="divider" aria-hidden="true" style="margin-bottom: 18px;"></div>
+			<div class="card" style="padding: 18px 16px; position: relative; overflow: hidden;">
+				<div aria-hidden="true" style="position: absolute; inset: -1px; opacity: 0.18; background: radial-gradient(540px 200px at 20% 25%, rgba(var(--accent-2), 0.18), transparent 62%), radial-gradient(540px 200px at 90% 10%, rgba(var(--accent), 0.16), transparent 62%);"></div>
+				<div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+					<div>
+						<div class="font-montserrat font-semibold" style="font-size: 18px;">{release.version}</div>
+						<div class="font-jbmono" style="margin-top: 6px; color: rgba(var(--muted), 1); font-size: 13px;">
+							Released {release.date}
+						</div>
+					</div>
+					<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+						<a href={release.url} class="btn-primary focus-ring font-montserrat">
+							View release
+							<span aria-hidden="true" style="opacity: 0.8; font-family: 'JetBrains Mono', monospace;">→</span>
+						</a>
+						<a href="/download" class="btn-secondary focus-ring font-montserrat">Download options</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
+</section>
