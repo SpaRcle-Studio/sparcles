@@ -25,6 +25,9 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      - name: Updating submodules.
+        run: git submodule --quiet update --init --recursive --depth 1 --jobs 4
+
       - name: Get latest news from the forum
         run: |
           python .github/workflows/NewsAPI.py
